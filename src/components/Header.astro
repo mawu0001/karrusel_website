@@ -20,8 +20,11 @@
       </li>
       <li><a href="#">My Festival</a></li>
       <li><a href="about.html">About us</a></li>
-      <li><img src="/img/logo.svg" alt="logo" /></li>
+      <div id="logo_contatiner">
+        <img id="burger_logo" src="/img/logo.svg" alt="logo" />
+      </div>
     </ul>
+
     <div class="burger">
       <div class="line"></div>
       <div class="line"></div>
@@ -41,27 +44,30 @@
   }
 
   .logo img {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: auto;
+  }
+  #burger_logo {
+    width: 112px;
+    height: 68px;
   }
 
-  /* nav {
+  nav {
     display: flex;
     align-items: center;
-  } */
-
-  .menu {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
     justify-content: center;
-    margin: 0;
-    padding: 0;
   }
 
-  /* .menu li {
-    margin-right: 20px;
-  } */
+  .menu {
+    list-style: none;
+  }
+  /* 
+ display: flex;
+    flex-direction: column;
+     justify-content: center;
+    margin: 0;
+    padding: 0;
+     */
 
   /* .menu li:last-child {
     margin-right: 0;
@@ -74,16 +80,13 @@
     text-decoration: none;
     transition: color 0.3s;
     text-align: center;
-    font-family: var(--primaryFont);
-    font-size: 48px;
-    font-weight: 700;
-    line-height: normal;
   }
 
   .burger {
     width: 30px;
     height: 20px;
     cursor: pointer;
+    display: block;
   }
 
   .burger .line {
@@ -92,16 +95,16 @@
     background-color: var(--red10);
     margin-bottom: 5px;
     transition: 0.2s linear;
+    z-index: 1000;
+    position: relative;
   }
-  /* .burger {
-    display: none;
-  } */
 
   .menu {
     display: none;
   }
-  .burger {
-    display: block;
+  .logo_contatiner {
+    display: flex;
+    flex-direction: row;
   }
   .burger.active .line:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
@@ -122,7 +125,7 @@
     display: block;
     background-color: var(--red60);
     position: absolute;
-    top: 60px;
+    top: 0px;
     left: 0;
     width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -134,16 +137,25 @@
   }
 
   nav.active .menu a {
-    font-size: 24px;
+    font-family: var(--primaryFont);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: normal;
   }
+
   @media screen and (min-width: 700px) {
     .menu a {
-      color: transparent;
-      stroke: 2px var(--red10);
+      color: var(--red60);
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: var(--red10);
       font-size: 96px;
     }
     .menu a:hover {
       color: var(--red10);
+    }
+    .logo img {
+      height: 80px;
+      width: auto;
     }
   }
 </style>
