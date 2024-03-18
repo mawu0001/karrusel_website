@@ -1,5 +1,5 @@
 ---
-const { data } = Astro.props;
+const { data, dato } = Astro.props;
 ---
 
 <div class="date_container">
@@ -71,7 +71,7 @@ const { data } = Astro.props;
       fill="#741313"
       mask="url(#path-5-inside-2_1220_9808)"></path>
   </svg>
-  <h3>Thursday 25 AUG</h3>
+  <h3>{dato}</h3>
 </div>
 <article class="artist_lineup">
   <h1>{data.name}</h1>
