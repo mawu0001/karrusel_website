@@ -2,4 +2,164 @@
 import Skelet from "../layout/Skelet.astro";
 ---
 
-<Skelet />
+<Skelet title="GALLERY">
+    <button class="b_2023">2023</button>
+    <button>2022</button>
+    <button>2021</button>
+    <button>2020</button>
+    <h3>KARRUSEL 2023 AFTERMOVIE</h3>
+    <img src="public/img/am.webp" class="am" alt="">
+    <h3>KARRUSEL 2023 PICTURES</h3>
+
+    <div class="gallery_container_a">
+        <div class="gallery_v1">
+            <img src="public/img/v1.webp" alt="Image1" id="modal_image">
+        <!-- pop up ved klik på billede -->
+        <div id="my_modal" class="gallery_modal">
+        <span class="close">&times;</span>
+        <img class="modal_content" id="img01">
+    </div>
+        </div>
+        <div class="gallery_v2">
+            <img src="public/img/v2.webp" alt="Image2" id="modal_image">
+        </div>
+        <div class="gallery_s1">
+            <img src="public/img/s1.webp" alt="Image3" id="modal_image">
+        </div>
+    </div>  
+    <div class="gallery_container_b">
+        <div class="gallery_f1">    
+            <img src="public/img/f1.webp" alt="Image4" id="modal_image">
+        </div>
+        <div class="gallery_f2">
+            <img src="public/img/f2.webp" alt="">
+        </div>
+        <div class="gallery_s2">
+            <img src="public/img/s2.webp" alt="">
+        </div>
+    </div>
+
+<style>
+    button{
+    background-color: transparent;
+    color: #FFF1F1;
+    padding: 1% 7%;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: "General Sans", sans-serif;
+    font-weight: 700;
+    border: 2px solid #FFF1F1;
+    margin-top: 10%;
+    margin-bottom: 8%;
+    }
+    .b_2023{
+    color: #EC1616;
+    background-color: #FFF1F1;
+    }
+    .am {
+    margin-top: 4%;
+    margin-bottom: 8%;
+    width: 92%;
+    }
+    .gallery_container_a, .gallery_container_b {
+    margin-top: 4%;
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    grid-template-rows: 1fr, 1fr;
+    row-gap: 6%;
+    }
+    .gallery_v1, .gallery_f1 {
+    grid-column: 1;
+    grid-row: 1;
+    }
+    .gallery_v2, .gallery_f2{
+    grid-column: 2;
+    }
+    .gallery_s1, .gallery_s2{
+    grid-row: 2;
+    grid-column: 1/span 2;
+    margin-bottom: 12%;
+    }
+    .gallery_s1 img, .gallery_s2 img {
+    width: 92%;
+    }
+   
+/* style på modal */
+    .gallery_modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    backdrop-filter: blur(4px);
+    }
+    .modal_content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    }
+    .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #FFF1F1;
+    font-size: 40px;
+    font-weight: 200px;
+    transition: 0.3s;
+    font-family: "General Sans", sans-serif;
+    }
+    .close:hover,
+    .close:focus {
+    color: #FFF1F1;
+    text-decoration: none;
+    cursor: pointer;
+    }   
+</style>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("my_modal");
+    // Get the image and insert it inside the modal
+    var img = document.getElementById("modal_image");
+    var modalImg = document.getElementById("img01");
+    img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    }
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
+
+    // Get all images with the class name "image"
+    var images = document.querySelectorAll(".modal_image");
+
+    // Loop through each image
+    images.forEach(function(img) {
+    // Attach click event listener to each image
+    img.onclick = function(){
+    // Get the modal
+    var modal = document.getElementById("my_modal");
+
+    // Get the modal content element
+    var modalImg = document.getElementById("img01");
+
+    // Set the source of the clicked image to the modal content
+    modalImg.src = this.src;
+
+    // Display the modal
+    modal.style.display = "block";
+        }
+    });
+</script>
+
+</Skelet>
