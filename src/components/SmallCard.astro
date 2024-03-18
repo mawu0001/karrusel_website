@@ -1,0 +1,128 @@
+---
+---
+ <div class="card_small">
+            <img src="/public/img/fjaak.jpg" alt="fjaak" class="fjaak_small">
+            <img src="/public/img/card_red.svg" alt="frame" class="frame_small">
+            <div class="upper_text_small">
+                <h4>26</h4>
+                <h5>AUG</h5>
+            </div>
+            <div class="lower_text_small">
+                <h5>FJAAK</h5>
+                <h5>01:00-03:00</h5>
+            </div>
+            <div class="heart"></div>
+        </div>
+
+<style>
+/* small card */
+.card_small {
+  display: grid;
+  grid-template-columns: 160fr 57fr;
+  grid-template-rows: 45fr 100fr 45fr;
+  width: 200px;
+  height: 350px;
+}
+.fjaak_small,
+.frame_small {
+  grid-row: 1/3 span;
+  grid-column: 1/2 span;
+}
+.upper_text_small {
+  grid-row: 1;
+  grid-column: 2;
+  font-family: "General Sans", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--red10);
+  padding-top: 33px;
+  text-align: center;
+  line-height: 22px;
+  margin-left: 0px;
+}
+.upper_text_small h4 {
+  font-size: 28px;
+}
+.lower_text_small {
+  grid-row: 3;
+  grid-column: 1;
+  font-family: "General Sans", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--red10);
+  padding-left: 10px;
+  padding-top: 9px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+.frame_small {
+  height: 350px;
+}
+.fjaak_small {
+  border-radius: 14%;
+  height: 320px;
+  width: 200px;
+  padding-top: 30px;
+}
+.heart {
+  grid-row: 3;
+  grid-column: 2;
+  margin-right: 20px;
+  margin-top: 10px;
+  background-image: url(/public/img/heart_unfilled.svg);
+  background-repeat: no-repeat;
+  background-size: 35px;
+}
+.heart:hover {
+  background-image: url(/public/img/heart_filled_white.svg);
+}
+/* small card */
+@media screen and (min-width: 1000px) {
+    /* small card */
+  .card_small {
+    display: grid;
+    grid-template-columns: 180fr 85fr;
+    grid-template-rows: 45fr 175fr 45fr;
+    width: 400px;
+    height: 550px;
+  }
+  .upper_text_small {
+    font-size: 30px;
+    line-height: 35px;
+    padding-right: 25px;
+    padding-top: 18px;
+  }
+  .upper_text_small h4 {
+    font-size: 45px;
+  }
+  .lower_text_small {
+    font-size: 30px;
+    padding-left: 15px;
+    padding-top: 10px;
+    line-height: 30px;
+  }
+  .frame_small {
+    height: 550px;
+  }
+  .fjaak_small {
+    border-radius: 10%;
+    height: 540px;
+    width: 370px;
+    padding-top: 10px;
+  }
+  .heart {
+    grid-row: 3;
+    grid-column: 2;
+    height: 70px;
+    margin-right: 10px;
+    background-image: url(/public/img/heart_unfilled.svg);
+    background-repeat: no-repeat;
+    background-size: 70px;
+  }
+  .heart:hover {
+    background-image: url(/public/img/heart_filled_white.svg);
+  }
+}
+</style>
