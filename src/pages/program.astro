@@ -17,19 +17,10 @@ const Friday = data.filter((artists) => artists.day == `friday`);
 const Saturday = data.filter((artists) => artists.day == `saturday`);
 ---
 
-<!-- INDEX -->
 <Skelet title="program">
   <Day indhold={Thursday} filter="Thursday" dato="Thursday 24 AUG" />
   <Day indhold={Friday} filter="Friday" dato="Friday 25 AUG" />
   <Day indhold={Saturday} filter="Saturday" dato="Saturday 26 AUG" />
 </Skelet>
-
-<!-- <section class="artists">
-    {
-      lineup.map((artist) => {
-        return <ProgramCard data={artist} />;
-      })
-    }
-  </section> -->
 
 <style></style>
