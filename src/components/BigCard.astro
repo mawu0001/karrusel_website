@@ -1,177 +1,175 @@
 ---
-const { date, stage, time, name, about, image} = Astro.props;
+const { date, stage, time, name, about, image } = Astro.props;
 ---
- <div class="mobil_version">
 
-            <div class="card">
-                <img src={image} alt="fjaak" class="fjaak">
-                <img src="/img/smaller_card.svg" alt="frame" class="frame">
-                <div class="upper_text">
-                    <h4>{date}</h4>
-                    <h5>AUG</h5>
-                </div>
-                <div class="lower_text">
-                    <h5>{stage}</h5>
-                    <h5>{time}</h5>
-                </div>
-            </div>
-            <div class="about_tekst">
-                <h2>About {name}</h2>
-                <p>{about}
-                </p>
-            </div>
-        </div>
+<div class="mobil_version">
+  <div class="card">
+    <img src={image} alt={name} class="fjaak" />
+    <img src="/img/smaller_card.svg" alt="frame" class="frame" />
+    <div class="upper_text">
+      <h4>{date}</h4>
+      <h5>AUG</h5>
+    </div>
+    <div class="lower_text">
+      <h5>{stage}</h5>
+      <h5>{time}</h5>
+    </div>
+  </div>
+  <div class="about_tekst">
+    <h2>About {name}</h2>
+    <p>{about}</p>
+  </div>
+</div>
 
-             <div class="web_version">
-            <img src="/img/web_card.svg" alt="frame" class="frame">
-            <div class="card">
-                <img src={image} alt="fjaak" class="fjaak">
-                <div class="upper_text">
-                    <h4>{date}</h4>
-                    <h5>AUG</h5>
-                </div>
-                <div class="lower_text">
-                    <h5>{stage}</h5>
-                    <h5>{time}</h5>
-                </div>
-            </div>
-            <div class="about_tekst">
-                <h2>About {name}</h2>
-                <p>{about}
-                </p>
-            </div>
-        </div>
+<div class="web_version">
+  <img src="/img/web_card.svg" alt="frame" class="frame" />
+  <div class="card">
+    <img src={image} alt="fjaak" class="fjaak" />
+    <div class="upper_text">
+      <h4>{date}</h4>
+      <h5>AUG</h5>
+    </div>
+    <div class="lower_text">
+      <h5>{stage}</h5>
+      <h5>{time}</h5>
+    </div>
+  </div>
+  <div class="about_tekst">
+    <h2>About {name}</h2>
+    <p>{about}</p>
+  </div>
+</div>
 <style>
-   /* card */
-   .mobil_version{
-    margin-bottom: 50px;
-   }
-.web_version {
-  display: none;
-}
-.card {
-  display: grid;
-  grid-template-columns: 180fr 57fr;
-  grid-template-rows: 45fr 175fr 45fr;
-  width: 400px;
-  height: 600px;
-  margin: 20px auto;
-  margin-bottom: 50px;
-  margin-top: 10px;
-}
-.fjaak,
-.frame {
-  grid-row: 1/3 span;
-  grid-column: 1/2 span;
-}
-.upper_text {
-  grid-row: 1;
-  grid-column: 2;
-  font-family: "General Sans", sans-serif;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 700;
-  color: var(--red90);
-  padding-top: 25px;
-  text-align: center;
-  line-height: 35px;
-  padding-left: 5px;
-}
-.upper_text h4 {
-  font-size: 45px;
-}
-.lower_text {
-  grid-row: 3;
-  grid-column: 1;
-  font-family: "General Sans", sans-serif;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 700;
-  color: var(--red90);
-  padding-left: 15px;
-  padding-top: 8px;
-  line-height: 30px;
-  text-transform: uppercase;
-  text-size-adjust: 100%;
-}
-.frame {
-  height: 600px;
-}
-.fjaak {
-  border-radius: 10%;
-  height: 590px;
-  width: 400px;
-  padding-top: 17px;
-}
-/*
-/* tekst ramme */
-.ramme {
-  display: none;
-}
-/* tekst ramme */
-
-@media screen and (min-width: 1000px) {
-      /* card */
+  /* card */
   .mobil_version {
-    display: none;
+    margin-bottom: 50px;
   }
   .web_version {
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1.45fr;
-    grid-template-rows: 1fr;
-    margin-bottom: 50px;
-  }
-  .frame {
-    grid-column: 1/2 span;
-    grid-row: 1/2 span;
-    z-index: 2;
-    height: 600px;
-  }
-  .about_tekst {
-    grid-column: 2;
-    grid-row: 1;
-    margin-top: 10px;
-    margin-right: 10px;
+    display: none;
   }
   .card {
-    width: 490px;
+    display: grid;
+    grid-template-columns: 180fr 57fr;
+    grid-template-rows: 45fr 175fr 45fr;
+    width: 400px;
     height: 600px;
-    grid-column: 1;
-    grid-row: 1;
-    margin: 0;
+    margin: 20px auto;
+    margin-bottom: 50px;
+    margin-top: 10px;
   }
-  .fjaak {
+  .fjaak,
+  .frame {
     grid-row: 1/3 span;
     grid-column: 1/2 span;
   }
   .upper_text {
-    font-size: 35px;
+    grid-row: 1;
+    grid-column: 2;
+    font-family: "General Sans", sans-serif;
+    font-size: 30px;
+    font-style: normal;
     font-weight: 700;
+    color: var(--red90);
     padding-top: 25px;
+    text-align: center;
     line-height: 35px;
-    margin-left: 55px;
-    z-index: 3;
+    padding-left: 5px;
   }
   .upper_text h4 {
-    font-size: 52px;
+    font-size: 45px;
   }
   .lower_text {
-    font-size: 35px;
-    padding-left: 25px;
+    grid-row: 3;
+    grid-column: 1;
+    font-family: "General Sans", sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--red90);
+    padding-left: 15px;
     padding-top: 8px;
     line-height: 30px;
-    z-index: 3;
+    text-transform: uppercase;
+    text-size-adjust: 100%;
   }
-
-  .fjaak {
+  .frame {
     height: 600px;
-    width: 520px;
-    padding-top: 2px;
   }
-  img {
-  display: block;
-  max-width: none;
-}
-}
+  .fjaak {
+    border-radius: 10%;
+    height: 590px;
+    width: 400px;
+    padding-top: 17px;
+  }
+  /*
+/* tekst ramme */
+  .ramme {
+    display: none;
+  }
+  /* tekst ramme */
+
+  @media screen and (min-width: 1000px) {
+    /* card */
+    .mobil_version {
+      display: none;
+    }
+    .web_version {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1.45fr;
+      grid-template-rows: 1fr;
+      margin-bottom: 50px;
+    }
+    .frame {
+      grid-column: 1/2 span;
+      grid-row: 1/2 span;
+      z-index: 2;
+      height: 600px;
+    }
+    .about_tekst {
+      grid-column: 2;
+      grid-row: 1;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+    .card {
+      width: 490px;
+      height: 600px;
+      grid-column: 1;
+      grid-row: 1;
+      margin: 0;
+    }
+    .fjaak {
+      grid-row: 1/3 span;
+      grid-column: 1/2 span;
+    }
+    .upper_text {
+      font-size: 35px;
+      font-weight: 700;
+      padding-top: 25px;
+      line-height: 35px;
+      margin-left: 55px;
+      z-index: 3;
+    }
+    .upper_text h4 {
+      font-size: 52px;
+    }
+    .lower_text {
+      font-size: 35px;
+      padding-left: 25px;
+      padding-top: 8px;
+      line-height: 30px;
+      z-index: 3;
+    }
+
+    .fjaak {
+      height: 600px;
+      width: 520px;
+      padding-top: 2px;
+    }
+    img {
+      display: block;
+      max-width: none;
+    }
+  }
 </style>
