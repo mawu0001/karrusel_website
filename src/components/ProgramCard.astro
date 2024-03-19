@@ -1,12 +1,15 @@
 ---
-const { data, dato } = Astro.props;
-console.log(data);
+const { data, navn, link } = Astro.props;
 ---
 
-<article class="artist_lineup">
-  <a href={`artists/${data.slug}`}> <h2>{data.name}</h2></a>
-  <a href=""><h3>{data.name}</h3></a>
-</article>
+<!-- PERSONKORT -->
+<a href={link}>
+  <article class="artist_lineup_main">
+    <h2>{navn}</h2>
+  </article>
+</a>
+
+<!-- <a href=""><h3>{data.name}</h3></a> -->
 
 <style>
   h2 {
@@ -15,10 +18,17 @@ console.log(data);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--red60);
   }
+  h2:hover {
+    color: var(--red10);
+    -webkit-text-stroke-width: 0;
+  }
+  a {
+    text-decoration: none;
+  }
 
-  .artist_lineup {
+  /* .artist_lineup_main {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+  } */
 </style>

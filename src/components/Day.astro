@@ -1,7 +1,9 @@
 ---
-const { data, dato } = Astro.props;
+import ProgramCard from "../components/ProgramCard.astro";
+const { dato, filter, data, indhold } = Astro.props;
 ---
 
+<!-- SEKTION -->
 <div class="date_container">
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -42,36 +44,48 @@ const { data, dato } = Astro.props;
       fill="#761212"
       mask="url(#path-5-inside-2_1217_9770)"></path>
   </svg>
-  <h3>Thursday 25 AUG</h3>
-</div>
-<div class="date_container_web">
-  <svg
-    width="504"
-    height="87"
-    viewBox="0 0 504 87"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="204" height="59" rx="29.5" fill="#741313"></rect>
-    <mask id="path-2-inside-1_1220_9808" fill="white">
-      <path d="M194 24H484V59H214C202.954 59 194 50.0457 194 39V24Z"></path>
-    </mask>
-    <path
-      d="M194 24H484H194ZM484 69H214C197.431 69 184 55.5685 184 39H204C204 44.5228 208.477 49 214 49H484V69ZM214 69C197.431 69 184 55.5685 184 39V24H204V39C204 44.5228 208.477 49 214 49V69ZM484 24V59V24Z"
-      fill="#741313"
-      mask="url(#path-2-inside-1_1220_9808)"></path>
-    <rect x="174" y="49" width="42" height="10" fill="#741313"></rect>
-    <mask id="path-5-inside-2_1220_9808" fill="white">
-      <path
-        d="M459 49H484C495.046 49 504 57.9543 504 69V87H479C467.954 87 459 78.0457 459 67V49Z"
-      ></path>
-    </mask>
-    <path
-      d="M459 39H484C500.569 39 514 52.4315 514 69H494C494 63.4772 489.523 59 484 59H459V39ZM504 87H459H504ZM459 87V49V87ZM484 39C500.569 39 514 52.4315 514 69V87H494V69C494 63.4772 489.523 59 484 59V39Z"
-      fill="#741313"
-      mask="url(#path-5-inside-2_1220_9808)"></path>
-  </svg>
   <h3>{dato}</h3>
+  {
+    indhold.map((artist) => (
+      <ProgramCard navn={artist.name} link={"/artist/" + artist.slug} />
+    ))
+  }
+</div>
+<div>
+  <div class="date_container_web">
+    <svg
+      width="504"
+      height="87"
+      viewBox="0 0 504 87"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="204" height="59" rx="29.5" fill="#741313"></rect>
+      <mask id="path-2-inside-1_1220_9808" fill="white">
+        <path d="M194 24H484V59H214C202.954 59 194 50.0457 194 39V24Z"></path>
+      </mask>
+      <path
+        d="M194 24H484H194ZM484 69H214C197.431 69 184 55.5685 184 39H204C204 44.5228 208.477 49 214 49H484V69ZM214 69C197.431 69 184 55.5685 184 39V24H204V39C204 44.5228 208.477 49 214 49V69ZM484 24V59V24Z"
+        fill="#741313"
+        mask="url(#path-2-inside-1_1220_9808)"></path>
+      <rect x="174" y="49" width="42" height="10" fill="#741313"></rect>
+      <mask id="path-5-inside-2_1220_9808" fill="white">
+        <path
+          d="M459 49H484C495.046 49 504 57.9543 504 69V87H479C467.954 87 459 78.0457 459 67V49Z"
+        ></path>
+      </mask>
+      <path
+        d="M459 39H484C500.569 39 514 52.4315 514 69H494C494 63.4772 489.523 59 484 59H459V39ZM504 87H459H504ZM459 87V49V87ZM484 39C500.569 39 514 52.4315 514 69V87H494V69C494 63.4772 489.523 59 484 59V39Z"
+        fill="#741313"
+        mask="url(#path-5-inside-2_1220_9808)"></path>
+    </svg>
+    <h3>{dato}</h3>
+    {
+      indhold.map((artist) => (
+        <ProgramCard navn={artist.name} link={"/artist/" + artist.slug} />
+      ))
+    }
+  </div>
 </div>
 
 <style>
@@ -87,8 +101,10 @@ const { data, dato } = Astro.props;
   .date_container_web {
     margin-top: 34px;
     display: flex;
+    flex-direction: column;
     position: relative;
     justify-content: center;
+    align-items: center;
   }
   .date_container_web {
     display: none;
