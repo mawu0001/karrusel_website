@@ -1,0 +1,48 @@
+---
+import Skelet from "../../layout/Skelet.astro";
+import BigCard from "../../components/BigCard.astro";
+import ArtistTitle from "../../components/ArtistTitle.astro";
+import SmallCard from "../../components/SmallCard.astro";
+export async function getStaticPaths() {
+  const data = await fetch(
+    "https://uvbxoelxnxgaxzhtqltc.supabase.co/rest/v1/artists",
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV2YnhvZWx4bnhnYXh6aHRxbHRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTI2NDMsImV4cCI6MjAyNjA2ODY0M30.9IGFv7B_qRusv2zUrH9tJ55r4XCJtXT6DbsgnhCLSmU",
+      },
+    }
+  ).then((response) => response.json());
+
+  return data.map((artists) => {
+    return {
+      params: { slug: artists.slug },
+      props: { myData: artists },
+    };
+  });
+}
+
+const { myData } = Astro.props;
+console.log(myData);
+---
+
+<Skelet>
+  <ArtistTitle name={myData.name} genre={myData.genre} />
+  <BigCard name={myData.name}>
+    date={myData.date}
+    stage={myData.place}
+    time={myData.time}
+    name={myData.name}
+    about={myData.description}
+    image={myData.img}
+  </BigCard>
+  <h2>Other Artist Playing at {myData.place}</h2>
+  <SmallCard />
+</Skelet>
+
+<!--  {
+    myData.map((artist) => (
+      <ProgramCard navn={artist.name} link={"/artist/" + artist.slug} />
+    ))
+  } -->
