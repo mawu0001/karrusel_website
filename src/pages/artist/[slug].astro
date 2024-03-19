@@ -15,10 +15,10 @@ export async function getStaticPaths() {
     }
   ).then((response) => response.json());
 
-  return data.map((artists) => {
+  return data.map((artist) => {
     return {
-      params: { slug: artists.slug },
-      props: { myData: artists },
+      params: { slug: artist.slug },
+      props: { myData: artist },
     };
   });
 }
@@ -29,14 +29,13 @@ console.log(myData);
 
 <Skelet>
   <ArtistTitle name={myData.name} genre={myData.genre} />
-  <BigCard name={myData.name}>
+  <BigCard name={myData.name}
     date={myData.date}
     stage={myData.place}
     time={myData.time}
     name={myData.name}
     about={myData.description}
-    image={myData.img}
-  </BigCard>
+    image={myData.img}/>
   <h2>Other Artist Playing at {myData.place}</h2>
   <SmallCard />
 </Skelet>
