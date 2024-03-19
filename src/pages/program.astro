@@ -1,16 +1,6 @@
 ---
 import Skelet from "../layout/Skelet.astro";
 import Day from "../components/Day.astro";
-
-// const url = "https://uvbxoelxnxgaxzhtqltc.supabase.co/rest/v1/artists";
-// const options = {
-//   headers: {
-//     apikey:
-//       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV2YnhvZWx4bnhnYXh6aHRxbHRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTI2NDMsImV4cCI6MjAyNjA2ODY0M30.9IGFv7B_qRusv2zUrH9tJ55r4XCJtXT6DbsgnhCLSmU",
-//   },
-// };
-// const response = await fetch(url, options);
-// const lineup = await response.json();
 const data = await fetch(
   "https://uvbxoelxnxgaxzhtqltc.supabase.co/rest/v1/artists",
   {
@@ -21,7 +11,6 @@ const data = await fetch(
     },
   }
 ).then((res) => res.json());
-console.log(data);
 
 const Thursday = data.filter((artists) => artists.day == `thursday`);
 const Friday = data.filter((artists) => artists.day == `friday`);
