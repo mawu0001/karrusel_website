@@ -3,7 +3,7 @@ const { data } = Astro.props
 ---
  <div class="card_small">
             <img src={data.img} alt="fjaak" class="fjaak_small">
-            <img src="/public/img/card_red.svg" alt="frame" class="frame_small">
+            <img src="/img/card_red.svg" alt="frame" class="frame_small">
             <div class="upper_text_small">
                 <h4>{data.date}</h4>
                 <h5>AUG</h5>
@@ -73,12 +73,12 @@ const { data } = Astro.props
   grid-column: 2;
   margin-right: 20px;
   margin-top: 10px;
-  background-image: url(/public/img/heart_unfilled.svg);
+  background-image: url(/img/heart_unfilled.svg);
   background-repeat: no-repeat;
   background-size: 35px;
 }
 .heart:hover {
-  background-image: url(/public/img/heart_filled_white.svg);
+  background-image: url(/img/heart_filled_white.svg);
 }
 /* small card */
 @media screen and (min-width: 1000px) {
@@ -119,12 +119,12 @@ const { data } = Astro.props
     grid-column: 2;
     height: 70px;
     margin-right: 10px;
-    background-image: url(/public/img/heart_unfilled.svg);
+    background-image: url(/img/heart_unfilled.svg);
     background-repeat: no-repeat;
     background-size: 70px;
   }
   .heart:hover {
-    background-image: url(/public/img/heart_filled_white.svg);
+    background-image: url(/img/heart_filled_white.svg);
   }
 }
 </style>
