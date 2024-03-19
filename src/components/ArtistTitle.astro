@@ -1,0 +1,47 @@
+---
+---
+<div class="overskrift_artist">
+            <h1>FJAAK</h1> <img src="/public/img/heart_unfilled_red.svg" alt="heart" class="sv_heart">
+        </div>
+<h5 class="genre">Techno UK Garage Dub Breakbeat</h5>
+
+<style>
+    /*overskrift*/
+.overskrift_artist {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+}
+.sv_heart {
+  height: 50px;
+}
+.sv_heart:hover {
+  background-image: url(/public/img/heart_filled.svg);
+  background-repeat: no-repeat;
+  background-size: 50px;
+}
+.genre {
+  color: var(--red10);
+  opacity: 50%;
+  font-family: "General Sans", sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+}
+@media screen and (min-width: 1000px) {
+    /* overskrift */
+  .genre {
+    font-size: 35px;
+  }
+  .sv_heart {
+    height: 90px;
+  }
+  .sv_heart:hover {
+    background-image: url(/public/img/heart_filled.svg);
+    background-repeat: no-repeat;
+    background-size: 90px;
+  }
+}
+</style>
