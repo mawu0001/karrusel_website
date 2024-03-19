@@ -3,6 +3,7 @@ import Skelet from "../layout/Skelet.astro";
 import BigCard from "../components/BigCard.astro";
 import ArtistTitle from "../components/ArtistTitle.astro";
 import SmallCard from "../components/SmallCard.astro";
+import Text from "../components/Text.astro";
 const data = await fetch(
   "https://uvbxoelxnxgaxzhtqltc.supabase.co/rest/v1/artists",
   {
@@ -35,6 +36,7 @@ console.log(data);
       })
     }
   </section>
+  <Text></Text>
 </Skelet>
 
 <style>
