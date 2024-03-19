@@ -3,31 +3,27 @@ import Skelet from "../layout/Skelet.astro";
 import BigCard from "../components/BigCard.astro";
 import ArtistTitle from "../components/ArtistTitle.astro";
 import SmallCard from "../components/SmallCard.astro";
-const data = await fetch(
-  "https://uvbxoelxnxgaxzhtqltc.supabase.co/rest/v1/artists",
-  {
+export async function getStaticPaths(){
+    const data = await fetch("https://uvbxoelxnxgaxzhtqltc.supabase.co/rest/v1/artists", {
     method: "GET",
     headers: {
       apikey:
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV2YnhvZWx4bnhnYXh6aHRxbHRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTI2NDMsImV4cCI6MjAyNjA2ODY0M30.9IGFv7B_qRusv2zUrH9tJ55r4XCJtXT6DbsgnhCLSmU",
     },
-  }
-).then((res) => res.json());
+  }).then(response => response.json());
+    return data.map((artist) => {
+        return{
+            params: { slug: artist.slug },
+            props: { myData: artist },
+        };
+    });
+}
 
-console.log(data);
+const { myData } = Astro.params;
+console.log(myData);
 ---
-
-
 <Skelet>
-  <section class="ArtistTitle">
-    {
-      data.map((artist) => {
-        return <ArtistTitle data={artist} />;
-      })
-    }
-  </section>
   <BigCard></BigCard>
   <h2>Other Artist Playing at Manegen</h2>
 <SmallCard></SmallCard>
 </Skelet>
-
