@@ -1,20 +1,19 @@
 ---
-const { date, stage, time, name, about, image } = Astro.props;
+const { data } = Astro.props
 ---
-
-<div class="card_small">
-  <img src={image} alt={name} class="fjaak_small" />
-  <img src="/img/card_red.svg" alt="frame" class="frame_small" />
-  <div class="upper_text_small">
-    <h4>{date}</h4>
-    <h5>AUG</h5>
-  </div>
-  <div class="lower_text_small">
-    <h5>{name}</h5>
-    <h5>{time}</h5>
-  </div>
-  <div class="heart"></div>
-</div>
+ <div class="card_small">
+            <img src={data.img} alt="fjaak" class="fjaak_small">
+            <img src="/img/card_red.svg" alt="frame" class="frame_small">
+            <div class="upper_text_small">
+                <h4>{data.date}</h4>
+                <h5>AUG</h5>
+            </div>
+            <div class="lower_text_small">
+                <h5>{data.name}</h5>
+                <h5>{data.time}</h5>
+            </div>
+            <div class="heart"></div>
+        </div>
 
 <style>
 /* small card */
