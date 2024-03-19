@@ -1,0 +1,48 @@
+---
+import Index from "../pages/index.astro"
+---
+<div class="artist-card">
+    <img src="" alt="Artist Image" class="artist-image">
+
+    <div class="artist-info">
+        <div class="red-border"></div>
+
+        <div class="performance-info">
+            <p>Date: </p>
+            <p>Time: </p>
+        </div>
+        <h2 class="artist-name"></h2>
+    </div>
+</div>
+
+<style>
+.artist-card {
+    border: 5px solid red;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 488px;
+    height: 719px;
+}
+
+.red-border {
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
+.artist-image {
+width: 100%;
+max-width: 200px;
+height: auto;
+margin-bottom: 10px;
+}
+
+.performance-info {
+    margin-bottom: 10px;
+}
+
+.artist-name {
+    margin-bottom: 0;
+}
+
+</style>

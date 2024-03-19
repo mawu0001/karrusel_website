@@ -1,0 +1,74 @@
+---
+import SmallCard from "./SmallCard.astro"
+
+---
+
+<div class="carousel">
+    <SmallCard>
+        <img src="public/" alt="">
+        <img src="public/img/fjaak_smallcard.png" alt="FJAAK">
+        <div class="artist-info">
+            <div class="red-border"></div>
+            <div class="performance-info">
+                <p>Date: March 25</p>
+                <p>Time: 8:00 PM</p>
+            </div>
+            <h2 class="artist-name">Artist Name</h2>
+        </div>   
+    </SmallCard>
+    <SmallCard>
+        <img src="/public/img/SPFDJ_smallcard.png" alt="Artist Image" class="artist-image">
+    
+        <div class="artist-info">
+            <div class="red-border"></div>
+    
+            <div class="performance-info">
+                <p>Date: </p>
+                <p>Time: </p>
+            </div>
+            <h2 class="artist-name"></h2>
+    </SmallCard>
+    <SmallCard>
+        <img src="/public/img/anna-logic_smallcard.png" alt="Artist Image" class="artist-image">
+    
+        <div class="artist-info">
+            <div class="red-border"></div>
+    
+            <div class="performance-info">
+                <p>Date: </p>
+                <p>Time: </p>
+            </div>
+            <h2 class="artist-name"></h2>
+    </SmallCard>
+</div>
+
+<style>
+    .carousel {
+        display: flex;
+        gap: 20px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .small-card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin-right: 20px;
+        width: 200px; /* Adjust card width as needed */
+        flex-shrink: 0; /* Prevent cards from shrinking */
+        transition: transform 0.3s; /* Smooth transition */
+    }
+
+    .small-card:hover {
+        transform: scale(1.1);
+        z-index: 1;
+    }
+</style>
