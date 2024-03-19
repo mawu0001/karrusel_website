@@ -14,16 +14,17 @@ export async function getStaticPaths(){
     return data.map((artist) => {
         return{
             params: { slug: artist.slug },
-            props: { myData: artist },
+            props: { artist },
         };
     });
 }
 
-const { myData } = Astro.params;
-console.log(myData);
+const { artist } = Astro.params;
+console.log(artist);
 ---
 <Skelet>
-  <BigCard></BigCard>
-  <h2>Other Artist Playing at Manegen</h2>
+  <ArtistTitle></ArtistTitle>
+  <BigCard date={artist.date} stage={artist.place} time={artist.time} name={artist.name} about={artist.description}></BigCard>
+  <h2>Other Artist Playing at {artist.place}</h2>
 <SmallCard></SmallCard>
 </Skelet>

@@ -1,15 +1,16 @@
 ---
+const { data } = Astro.props
 ---
  <div class="card_small">
             <img src="/public/img/fjaak.jpg" alt="fjaak" class="fjaak_small">
             <img src="/public/img/card_red.svg" alt="frame" class="frame_small">
             <div class="upper_text_small">
-                <h4>26</h4>
+                <h4>{data.date}</h4>
                 <h5>AUG</h5>
             </div>
             <div class="lower_text_small">
-                <h5>FJAAK</h5>
-                <h5>01:00-03:00</h5>
+                <h5>{data.name}</h5>
+                <h5>{data.time}</h5>
             </div>
             <div class="heart"></div>
         </div>
