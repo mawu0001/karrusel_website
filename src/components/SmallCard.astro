@@ -2,7 +2,7 @@
 const { data } = Astro.props
 ---
  <div class="card_small">
-            <img src="/public/img/fjaak.jpg" alt="fjaak" class="fjaak_small">
+            <img src={data.img} alt="fjaak" class="fjaak_small">
             <img src="/public/img/card_red.svg" alt="frame" class="frame_small">
             <div class="upper_text_small">
                 <h4>{data.date}</h4>

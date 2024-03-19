@@ -1,11 +1,10 @@
 ---
-const { data } = Astro.props
-
+const { name, genre} = Astro.props;
 ---
 <div class="overskrift_artist">
-            <h1>{data.name}</h1> <img src="/public/img/heart_unfilled_red.svg" alt="heart" class="sv_heart">
+            <h1>{name}</h1> <img src="/public/img/heart_unfilled_red.svg" alt="heart" class="sv_heart">
         </div>
-<h5 class="genre">{data.genre}</h5>
+<h5 class="genre">{genre}</h5>
 
 <style>
     /*overskrift*/

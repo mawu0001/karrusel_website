@@ -28,7 +28,7 @@ console.log(data);
   </section>
   <BigCard></BigCard>
   <h2>Other Artist Playing at Manegen</h2>
-<section class="ArtistTitle">
+<section class="smallcard">
     {
       data.map((artist) => {
         return <SmallCard data={artist} />;
@@ -37,3 +37,9 @@ console.log(data);
   </section>
 </Skelet>
 
+<style>
+  .smallcard{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+</style>
