@@ -1,76 +1,43 @@
 ---
+const { date, stage, time, name, about, image} = Astro.props;
 ---
  <div class="mobil_version">
 
             <div class="card">
-                <img src="/public/img/fjaak.jpg" alt="fjaak" class="fjaak">
-                <img src="/public/img/smaller_card.svg" alt="frame" class="frame">
+                <img src={image} alt="fjaak" class="fjaak">
+                <img src="/img/smaller_card.svg" alt="frame" class="frame">
                 <div class="upper_text">
-                    <h4>26</h4>
+                    <h4>{date}</h4>
                     <h5>AUG</h5>
                 </div>
                 <div class="lower_text">
-                    <h5>Manegen</h5>
-                    <h5>01:00-03:00</h5>
+                    <h5>{stage}</h5>
+                    <h5>{time}</h5>
                 </div>
             </div>
             <div class="about_tekst">
-                <h2>About FJAAK</h2>
-                <p>Felix Wagner and Aaron Röbig are the ones behind the German electronic duo FJAAK.
-                    Having grown up
-                    together in
-                    Spandau on
-                    the outskirts of Berlin, the duo started making music at an early age before joining the infamous
-                    techno
-                    scene of Berlin
-                    and founding the label Spandau. 
-                    Today their tracks range from reflecting powerhouse to storming warehouse techno, sometimes with a
-                    mix
-                    of UK
-                    garage dub
-                    and breakbeat. Moreover, FJAAK mostly composes their tracks entirely on analogue equipment. 
-                    What started as small raves in the forest in Spandau, later turned into regular appearances at the
-                    Berlin
-                    club Berghain
-                    and numerous big festivals. This year, they are bringing their driving, energetic dance tracks to
-                    Karrusel.
+                <h2>About {name}</h2>
+                <p>{about}
                 </p>
             </div>
         </div>
 
              <div class="web_version">
-            <img src="/public/img/web_card.svg" alt="frame" class="frame">
+            <img src="/img/web_card.svg" alt="frame" class="frame">
             <div class="card">
-                <img src="/public/img/fjaak.jpg" alt="fjaak" class="fjaak">
+                <img src={image} alt="fjaak" class="fjaak">
                 <div class="upper_text">
-                    <h4>26</h4>
+                    <h4>{date}</h4>
                     <h5>AUG</h5>
                 </div>
                 <div class="lower_text">
-                    <h5>Manegen</h5>
-                    <h5>01:00-03:00</h5>
+                    <h5>{stage}</h5>
+                    <h5>{time}</h5>
                 </div>
             </div>
             <div class="about_tekst">
-                <h2>About FJAAK</h2>
-                <p>Felix Wagner and Aaron Röbig are the ones behind the German electronic duo FJAAK.
-                    Having grown up
-                    together in
-                    Spandau on
-                    the outskirts of Berlin, the duo started making music at an early age before joining the infamous
-                    techno
-                    scene of Berlin
-                    and founding the label Spandau. 
-                    Today their tracks range from reflecting powerhouse to storming warehouse techno, sometimes with a
-                    mix
-                    of UK
-                    garage dub
-                    and breakbeat. Moreover, FJAAK mostly composes their tracks entirely on analogue equipment. 
-                    What started as small raves in the forest in Spandau, later turned into regular appearances at the
-                    Berlin
-                    club Berghain
-                    and numerous big festivals. This year, they are bringing their driving, energetic dance tracks to
-                    Karrusel.
+                <h2>About {name}</h2>
+                <p>{about}
                 </p>
             </div>
         </div>
@@ -164,7 +131,7 @@
   .about_tekst {
     grid-column: 2;
     grid-row: 1;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-right: 10px;
   }
   .card {

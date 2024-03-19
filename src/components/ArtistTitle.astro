@@ -1,9 +1,10 @@
 ---
+const { name, genre} = Astro.props;
 ---
 <div class="overskrift_artist">
-            <h1>FJAAK</h1> <img src="/public/img/heart_unfilled_red.svg" alt="heart" class="sv_heart">
+            <h1>{name}</h1> <img src="/img/heart_unfilled_red.svg" alt="heart" class="sv_heart">
         </div>
-<h5 class="genre">Techno UK Garage Dub Breakbeat</h5>
+<h5 class="genre">{genre}</h5>
 
 <style>
     /*overskrift*/
