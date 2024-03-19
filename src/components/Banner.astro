@@ -1,33 +1,46 @@
 ---
 
 ---
-
+<div class="sliding-banner-container">
 <div class="sliding-banner">
     <a href="https://www.ticketmaster.dk/artist/karrusel-billetter/1013437" class="ticketmaster-link">
     <div class="ticket-banner">BUY TICKETS NOW ON TICKETMASTER  -  EARLY BIRD FESTIVAL PASSES ON SALE UNTIL APRIL 1ST</div>
 </a>
 </div>
+</div>
 
 <style>
-    .sliding-banner {
+    .sliding-banner-container {
+        left: 0;
         width: 100%;
         overflow: hidden;
-        white-space: nowrap;
         background-color: #FFF1F1;
         font-size: 25px;
+        text-decoration: none;
+        font-family: var(--primaryFont);
         }
-    .ticket-banner{
+    .sliding-banner {
         display: inline-block;
+        white-space: nowrap;
+        margin-left: -10px;
+        margin-right: 0;
+        }
+    .ticket-banner{        
         padding: 10px;
-        animation: slide 30s infinite;
+        animation: slide 30s infinite linear;
         color: #761212;
     }
+    .ticketmaster-link {
+          text-decoration: none; 
+        }
+
     @keyframes slide {
         0% {
-            transform: translateX(120%);
+            transform: translateX(100%);
         }
          100% {
-            transform: translateX(-120%);
+            transform: translateX(-100%);
         }
     }
 </style>
+
