@@ -1,6 +1,6 @@
 ---
 import ProgramCard from "../components/ProgramCard.astro";
-const { dato, filter, data } = Astro.props;
+const { dato, filter, data, indhold } = Astro.props;
 ---
 
 <!-- SEKTION -->
@@ -45,7 +45,11 @@ const { dato, filter, data } = Astro.props;
       mask="url(#path-5-inside-2_1217_9770)"></path>
   </svg>
   <h3>{dato}</h3>
-  <ProgramCard />
+  {
+    indhold.map((artist) => (
+      <ProgramCard navn={artist.name} link={"/artist/" + artist.slug} />
+    ))
+  }
 </div>
 <div>
   <div class="date_container_web">
@@ -76,6 +80,11 @@ const { dato, filter, data } = Astro.props;
         mask="url(#path-5-inside-2_1220_9808)"></path>
     </svg>
     <h3>{dato}</h3>
+    {
+      indhold.map((artist) => (
+        <ProgramCard navn={artist.name} link={"/artist/" + artist.slug} />
+      ))
+    }
   </div>
 </div>
 
