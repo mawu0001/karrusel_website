@@ -27,17 +27,22 @@ const { myData } = Astro.props;
 console.log(myData);
 ---
 
-<Skelet />
-<ArtistTitle />
-<BigCard name={myData.name}>
-  <!-- date={myData.date}
-  stage={myData.place}
-  time={myData.time}
-  name={myData.name}
-  about={myData.description}
-  image={myData.img} -->
-</BigCard>
-<!-- <h2>Other Artist Playing at {myData.place}</h2> -->
-<SmallCard />
+<Skelet>
+  <ArtistTitle name={myData.name} genre={myData.genre} />
+  <BigCard name={myData.name}>
+    date={myData.date}
+    stage={myData.place}
+    time={myData.time}
+    name={myData.name}
+    about={myData.description}
+    image={myData.img}
+  </BigCard>
+  <h2>Other Artist Playing at {myData.place}</h2>
+  <SmallCard />
+</Skelet>
 
-<!--name={myData.name}  genre={myData.genre} -->
+<!--  {
+    myData.map((artist) => (
+      <ProgramCard navn={artist.name} link={"/artist/" + artist.slug} />
+    ))
+  } -->
