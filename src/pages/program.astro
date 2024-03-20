@@ -1,7 +1,6 @@
 ---
 import Skelet from "../layout/Skelet.astro";
 import Day from "../components/Day.astro";
-import Banner from "../components/Banner.astro";
 const data = await fetch(
   "https://uvbxoelxnxgaxzhtqltc.supabase.co/rest/v1/artists",
   {
@@ -18,7 +17,6 @@ const Friday = data.filter((artists) => artists.day == `friday`);
 const Saturday = data.filter((artists) => artists.day == `saturday`);
 ---
 
-<Banner />
 <Skelet title="program">
   <Day indhold={Thursday} filter="Thursday" dato="Thursday 24 AUG" />
   <Day indhold={Friday} filter="Friday" dato="Friday 25 AUG" />

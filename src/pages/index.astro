@@ -1,6 +1,5 @@
 ---
 import Skelet from "../layout/Skelet.astro";
-import Banner from '../components/Banner.astro';
 import SmallCard from "../components/SmallCard.astro";
 import Carousel from "../components/Carousel.astro";
 import "../styles/index.css";
@@ -19,63 +18,77 @@ console.log(data);
 import "../styles/index.css";
 ---
 
-
-<Skelet title="" >
-<Banner />
-
-<div class="house_disco_techno">
+<Skelet title="">
+  <div class="house_disco_techno">
     <h1>3 DAYS OF</h1>
     <div class="img_container1">
-    <img src="/public/img/image_1_title.png" alt="">
-    <br><br>
-    <br> 
+      <img src="/public/img/image_1_title.png" alt="" />
+      <br /><br />
+      <br />
     </div><div class="img_container2">
-    <img src="/public/img/image_2_title.png" alt="">
-</div>
+      <img src="/public/img/image_2_title.png" alt="" />
+    </div>
     <h1>HOUSE, DISCO AND</h1>
     <div class="img_container3">
-    <img src="/public/img/image_3_title.png" alt="">
-</div>
+      <img src="/public/img/image_3_title.png" alt="" />
+    </div>
     <h1>TECHNO IN THE WOODS</h1>
-    <div class="img_container4">
-    <img src="/public/img/image_4_title.png" alt="">
-</div>
-</div>
-<br>
-<div class="time_place">
+    <div class="img_container">
+      <img src="/public/img/image_4_title.png" alt="" />
+    </div>
+  </div>
+  <br />
+  <div class="time_place">
     <h3>22 - 24 AUGUST</h3>
     <h3>REFSHALEØEN, COPENHAGEN</h3>
-</div>
-<br>
+  </div>
+  <br />
 
-<br>
-<div class="fresh-acts">
-<h3>Fresh Acts</h3>
-<Carousel />
-
-
-
-</div>
-<div class="buttons">
+  <br />
+  <div class="fresh-acts">
+    <h3>Fresh Acts</h3>
+    <Carousel />
+  </div>
+  <div class="buttons">
     <a href="program.html" class="button1">FULL 2024 LINE UP</a>
     <a href="artist.html" class="button2">FAVORITED ACTS MAP</a>
+  </div>
 
-</div>
-
-   <div class="my-festival-info-box">
-    <h3 class="first-box">Personalize your festival planning with our new feature 'My festival'</h3>    
-    <h3 class="second-box">This feature makes it quick and easy to get an overview of when and where your favorite acts are playing. By adding your favorite acts, My Festival generates personalized playlists, programs and maps, that let’s you lean back enjoy your festival experience without the hassle of planning on the go!
-</h3>
-
-</div> <br>
-<div class="gallery_index_video">
-    <a href="https://www.youtube.com/watch?v=w5XwDzNwiSk"><img src="/public/img/gallery_index_video.png" alt="Karrusel aftermovie 2023"></a>
-</div>
-<div class="gallery_index_images">
-    <img src="/public/img/1_gallery_index.png" alt="two men in dj booth" class="index_img_one">
-    <img src="/public/img/2_gallery_index.png" alt="" class="index_img_two">
-    <a href="gallery.html"><img src="/public/img/3_gallery_index.png" alt="view gallery button" class="index_img_three"></a>    
-    <img src="/public/img/6_gallery_index.png" alt="" class="index_img_four">
-</div>
+  <div class="my-festival-info-box">
+    <h3 class="first-box">
+      Personalize your festival planning with our new feature 'My festival'
+    </h3>
+    <h3 class="second-box">
+      This feature makes it quick and easy to get an overview of when and where
+      your favorite acts are playing. By adding your favorite acts, My Festival
+      generates personalized playlists, programs and maps, that let’s you lean
+      back enjoy your festival experience without the hassle of planning on the
+      go!
+    </h3>
+  </div>
+  <br />
+  <div class="gallery_index_video">
+    <a href="https://www.youtube.com/watch?v=w5XwDzNwiSk"
+      ><img
+        src="/public/img/gallery_index_video.png"
+        alt="Karrusel aftermovie 2023"
+      /></a
+    >
+  </div>
+  <div class="gallery_index_images">
+    <img
+      src="/public/img/1_gallery_index.png"
+      alt="two men in dj booth"
+      class="index_img_one"
+    />
+    <img src="/public/img/2_gallery_index.png" alt="" class="index_img_two" />
+    <a href="gallery.html"
+      ><img
+        src="/public/img/3_gallery_index.png"
+        alt="view gallery button"
+        class="index_img_three"
+      /></a
+    >
+    <img src="/public/img/6_gallery_index.png" alt="" class="index_img_four" />
+  </div>
 </Skelet>
-
