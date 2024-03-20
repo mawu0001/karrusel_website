@@ -1,67 +1,30 @@
 ---
 import SmallCard from "./SmallCard.astro"
 
----
+const data = await fetch(
+  "https://uvbxoelxnxgaxzhtqltc.supabase.co/rest/v1/artists",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV2YnhvZWx4bnhnYXh6aHRxbHRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTI2NDMsImV4cCI6MjAyNjA2ODY0M30.9IGFv7B_qRusv2zUrH9tJ55r4XCJtXT6DbsgnhCLSmU",
+    },
+  }
+).then((res) => res.json());
 
-<div class="carousel">
-    <SmallCard>
-        <div class="card_small">
-            <img src="/public/img/fjaak.jpg" alt="fjaak" class="fjaak_small">
-            <img src="/public/img/card_red.svg" alt="frame" class="frame_small">
-            <div class="upper_text_small">
-                <h4>26</h4>
-                <h5>AUG</h5>
-            </div>
-            <div class="lower_text_small">
-                <h5>FJAAK</h5>
-                <h5>01:00-03:00</h5>
-            </div>
-            <div class="heart"></div>
-        </div>
-    </SmallCard> <SmallCard>
-        <div class="card_small">
-            <img src="/public/img/fjaak.jpg" alt="fjaak" class="fjaak_small">
-            <img src="/public/img/card_red.svg" alt="frame" class="frame_small">
-            <div class="upper_text_small">
-                <h4>26</h4>
-                <h5>AUG</h5>
-            </div>
-            <div class="lower_text_small">
-                <h5>FJAAK</h5>
-                <h5>01:00-03:00</h5>
-            </div>
-            <div class="heart"></div>
-        </div>
-    </SmallCard><SmallCard>
-        <div class="card_small">
-            <img src="/public/img/fjaak.jpg" alt="fjaak" class="fjaak_small">
-            <img src="/public/img/card_red.svg" alt="frame" class="frame_small">
-            <div class="upper_text_small">
-                <h4>26</h4>
-                <h5>AUG</h5>
-            </div>
-            <div class="lower_text_small">
-                <h5>FJAAK</h5>
-                <h5>01:00-03:00</h5>
-            </div>
-            <div class="heart"></div>
-        </div>
-    </SmallCard>
-    <SmallCard />
-    <SmallCard />
-    <SmallCard />
-    <SmallCard />
-    <SmallCard />
-    <SmallCard />
-    <SmallCard />
-    <SmallCard />
-    <SmallCard />
-    <SmallCard />
-    <SmallCard />
-</div>
-<style>
+console.log(data);
+---
+ <div class="carousel">
+    {
+      data.map((data) => {
+        return <SmallCard data={data} />;
+      })
+    }
+  </section>
+  <style>
     .carousel {
         display: flex;
+        flex-direction: row;
         gap: 20px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
@@ -76,21 +39,4 @@ import SmallCard from "./SmallCard.astro"
     .carousel::-webkit-scrollbar {
         display: none;
     }
-
-    .card_small {
-        max-width: 300px; /* Set a maximum width for the cards */
-        width: auto; /* Allow cards to adjust their width based on content */
-        max-height: 300px;
-        flex-shrink: 0; /* Prevent cards from shrinking */
-    }
-
-    .card_small img {
-        width: 100%; /* Ensure images fill the card container */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    .card_small:hover {
-        transform: scale(1.2);
-        z-index: 1;
-    }
-</style>
+    </style>
