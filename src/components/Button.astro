@@ -11,27 +11,36 @@ const { year } = Astro.props;
 <style>
   .outer-container {
     background-color: var(--red10);
-    border-radius: 20px; /* Rounded corners on the outside */
-    padding: 10px;
-    width: 200px;
-    padding: 10px;
+    border-radius: 15px; /* Rounded corners on the outside */
+    padding: 7px;
+    width: 150px;
+    margin: 10px;
   }
 
   .inner-container {
     background-color: var(--black10);
     border-radius: 10px 30px 10px 30px; /* Specific rounded corners on the inside */
   }
-
-  .inner-container:hover {
-    background-color: var(--red10);
-  }
   h3 {
     text-align: center;
     padding: 10px;
     margin: 0;
-    font-size: 32px;
+    font-size: 16px;
   }
-  h3:hover {
-    color: var(--red60);
+  @media screen and (min-width: 1000px) {
+    .outer-container {
+      border-radius: 20px; /* Rounded corners on the outside */
+      width: 200px;
+    }
+
+    .inner-container:hover {
+      background-color: var(--red10);
+    }
+    h3 {
+      font-size: 32px;
+    }
+    h3:hover {
+      color: var(--red60);
+    }
   }
 </style>

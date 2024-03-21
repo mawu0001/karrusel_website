@@ -10,175 +10,183 @@ import Button from "../components/Button.astro";
     <Button class="b_2023" year="2021" />
     <Button class="b_2023" year="2020" />
   </section>
-  <h3>KARRUSEL 2023 AFTERMOVIE</h3>
-  <img src="public/img/am.webp" class="am" alt="" />
+  <div class="am">
+    <h3>KARRUSEL 2023 AFTERMOVIE</h3>
+    <img src="/img/am.webp" alt="" />
+  </div>
   <h3>KARRUSEL 2023 PICTURES</h3>
 
-  <div class="gallery_container_a">
-    <div class="gallery_v1">
-      <img src="public/img/v1.webp" alt="Image1" id="modal_image" />
-      <!-- pop up ved klik på billede -->
-      <div id="my_modal" class="gallery_modal">
-        <span class="close">&times;</span>
-        <img class="modal_content" id="img01" />
+  <div class="galler_wrapper">
+    <div class="g_wrapper_ab">
+      <div class="gallery_container_a">
+        <div class="gallery_v1">
+          <img src="/img/v1.webp" alt="Image1" class="modal_image" />
+          <div class="gallery_modal">
+            <span class="close">&times;</span>
+            <img class="modal_content" />
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery_container_b">
+        <div class="gallery_v2">
+          <img src="/img/v2.webp" alt="Image2" class="modal_image" />
+          <div class="gallery_modal">
+            <span class="close">&times;</span>
+            <img class="modal_content" />
+          </div>
+        </div>
       </div>
     </div>
-    <div class="gallery_v2">
-      <img src="public/img/v2.webp" alt="Image2" id="modal_image" />
+
+    <div class="gallery_container_c">
+      <div class="gallery_s1">
+        <img src="/img/s1.webp" alt="Image3" class="modal_image" />
+        <div class="gallery_modal">
+          <span class="close">&times;</span>
+          <img class="modal_content" />
+        </div>
+      </div>
     </div>
-    <div class="gallery_s1">
-      <img src="public/img/s1.webp" alt="Image3" id="modal_image" />
+    <div class="g_wrapper_de">
+      <div class="gallery_container_d">
+        <div class="gallery_f1">
+          <img src="/img/f1.webp" alt="Image4" class="modal_image" />
+          <div class="gallery_modal">
+            <span class="close">&times;</span>
+            <img class="modal_content" />
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery_container_e">
+        <div class="gallery_f2">
+          <img src="/img/f2.webp" alt="Image5" class="modal_image" />
+          <div class="gallery_modal">
+            <span class="close">&times;</span>
+            <img class="modal_content" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery_container_f">
+      <div class="gallery_s2">
+        <img src="/img/s2.webp" alt="Image6" class="modal_image" />
+        <div class="gallery_modal">
+          <span class="close">&times;</span>
+          <img class="modal_content" />
+        </div>
+      </div>
     </div>
   </div>
-  <div class="gallery_container_b">
-    <div class="gallery_f1">
-      <img src="public/img/f1.webp" alt="Image4" id="modal_image" />
-    </div>
-    <div class="gallery_f2">
-      <img src="public/img/f2.webp" alt="" />
-    </div>
-    <div class="gallery_s2">
-      <img src="public/img/s2.webp" alt="" />
-    </div>
-  </div>
+  <!-- Add more gallery containers as needed -->
+</Skelet>
 
-  <style>
-    /* h3{
-    font-size: 32px;
-   } */
-    /* button {
-      background-color: transparent;
-      color: #fff1f1;
-      padding: 1% 7%;
-      text-align: center;
-      display: inline-block;
-      cursor: pointer;
-      border-radius: 10px;
-      font-family: "General Sans", sans-serif;
-      font-weight: 700;
-      border: 2px solid #fff1f1;
-      margin-top: 10%;
-      margin-bottom: 8%;
-    }
-    .b_2023 {
-      color: #ec1616;
-      background-color: #fff1f1;
-    } */
+<style>
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .am {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+    margin-bottom: 8%;
+    width: 92%;
+  }
+  .am img {
+    align-items: center;
+  }
 
-    section {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
+  .modal_image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .g_wrapper_ab,
+  .g_wrapper_de,
+  .gallery_container_c,
+  .gallery_container_f {
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+  }
 
-    .am {
-      margin-top: 4%;
-      margin-bottom: 8%;
-      width: 92%;
-    }
-    .gallery_container_a,
-    .gallery_container_b {
-      margin-top: 4%;
-      display: grid;
-      grid-template-columns: 1fr, 1fr;
-      grid-template-rows: 1fr, 1fr;
-      row-gap: 6%;
-    }
-    .gallery_v1,
-    .gallery_f1 {
-      grid-column: 1;
-      grid-row: 1;
-    }
-    .gallery_v2,
-    .gallery_f2 {
-      grid-column: 2;
-    }
-    .gallery_s1,
-    .gallery_s2 {
-      grid-row: 2;
-      grid-column: 1 / span 2;
-      margin-bottom: 12%;
-    }
-    .gallery_s1 img,
-    .gallery_s2 img {
-      width: 92%;
-    }
+  .gallery_modal {
+    display: none; /* Initially hide the modal */
+    position: fixed;
+    z-index: 999; /* Ensure modal appears above other content */
+    padding-top: 100px; /* Center the modal vertically */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scrolling if modal content exceeds viewport height */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  }
 
-    /* style på modal */
-    .gallery_modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      padding-top: 100px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      backdrop-filter: blur(4px);
-    }
-    .modal_content {
-      margin: auto;
-      display: block;
-      width: 80%;
-      max-width: 700px;
-    }
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #fff1f1;
-      font-size: 40px;
-      font-weight: 200px;
-      transition: 0.3s;
-      font-family: "General Sans", sans-serif;
-    }
-    .close:hover,
-    .close:focus {
-      color: #fff1f1;
-      text-decoration: none;
-      cursor: pointer;
-    }
-  </style>
+  .modal_content {
+    margin: auto;
+    display: block;
+    max-width: 100%; /* Adjust max width of modal content as needed */
+    max-height: 100vh; /* Adjust max height of modal content as needed */
+  }
 
-  <script>
-    // Get the modal
-    var modal = document.getElementById("my_modal");
-    // Get the image and insert it inside the modal
-    var img = document.getElementById("modal_image");
-    var modalImg = document.getElementById("img01");
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  @media screen and (min-width: 1000px) {
+  }
+</style>
+
+<script>
+  // Get all modal containers
+  var modals = document.querySelectorAll(".gallery_modal");
+
+  // Loop through each modal container
+  modals.forEach(function (modal) {
+    // Get the image inside this modal
+    var img = modal.parentElement.querySelector(".modal_image");
+    var modalImg = modal.querySelector(".modal_content");
+
+    // Open modal when image is clicked
     img.onclick = function () {
       modal.style.display = "block";
       modalImg.src = this.src;
     };
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-    // When the user clicks on <span> (x), close the modal
+
+    // Get the <span> element that closes the modal for this modal
+    var span = modal.querySelector(".close");
+    // Close modal when the <span> is clicked
     span.onclick = function () {
       modal.style.display = "none";
     };
 
-    // Get all images with the class name "image"
-    var images = document.querySelectorAll(".modal_image");
-
-    // Loop through each image
-    images.forEach(function (img) {
-      // Attach click event listener to each image
-      img.onclick = function () {
-        // Get the modal
-        var modal = document.getElementById("my_modal");
-
-        // Get the modal content element
-        var modalImg = document.getElementById("img01");
-
-        // Set the source of the clicked image to the modal content
-        modalImg.src = this.src;
-
-        // Display the modal
-        modal.style.display = "block";
-      };
+    // Close modal when clicking outside for this modal
+    window.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
     });
-  </script>
-</Skelet>
+  });
+</script>
