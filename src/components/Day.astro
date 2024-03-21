@@ -47,7 +47,7 @@ const { dato, filter, data, indhold } = Astro.props;
   <h3>{dato}</h3>
   {
     indhold.map((artist) => (
-      <ProgramCard navn={artist.name} link={"/artist/" + artist.slug} />
+      <ProgramCard navn={artist.name} link={"../artist/" + artist.slug} />
     ))
   }
 </div>
